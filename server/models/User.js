@@ -30,6 +30,25 @@ const userSchema = new Schema(
       type: Date,
       default: Date.now,
     },
+
+    friends: {
+      type: [Schema.Types.ObjectId],
+      ref: 'User',
+    },
+    dailyHabits: {
+      type: [Schema.Types.ObjectId],
+      ref: 'DailyHabit',
+    },
+    days: {
+      type: [Schema.Types.ObjectId],
+      ref: 'Day',
+    },
+    currentMood: {
+      type: Schema.Types.ObjectId,
+      ref: 'Mood',
+      required: true,
+    },
+
   },
   {
     toJSON: {
@@ -45,6 +64,12 @@ userSchema.pre('save', async function (next) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
+  if (this.isModified('currentMood')) {
+    if(this.days.length) {
+      this.days[this.days.length - 1].mood = this.currentMood;
+    }
+  }
+  this.updatedAt = Date.now;
 
   next();
 });

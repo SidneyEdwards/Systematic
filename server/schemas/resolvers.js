@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { Day, Mood, User, DailyHabit } = require('../models');
 const { signToken } = require('../utils/auth');
 const { AuthenticationError, UserInputError } = require('apollo-server-express');
 const { dateScalar } = require('./scalar');
@@ -12,13 +12,38 @@ const resolvers = {
       }
       return await User.findById(context.user._id)
     },
+    currentMood: async (parent, args, context) => {
+      return await Mood.findById(args);
+    },
+    users: async (parent, args, context) => {
+      return await User.find({})
+      .populate('currentMood')
+      .populate({
+        path: 'days',
+        populate: { path: 'mood' }
+      });
+    },
+    moods: async (parent, args, context) => {
+      return await Mood.find({});
+    },
+    days: async (parent, args, context) => {
+      return await Day.find({}).populate('mood');
+    },
+    dailyHabits: async (parent, args, context) => {
+      return await DailyHabit.find({});
+    },
   },
   Mutation: {
-    addUser: async (parent, argObj) => {
+    addUser: async (parent, { firstName, lastName, email, password }) => {
       try {
-        const user = await User.create(argObj);
-        const token = signToken(user);
-        return { token, user };
+
+
+        const md = await Mood.findOne({numericV: 2});
+        const usr = await User.create({firstName: firstName, lastName: lastName, email: email, password: password, days: [], currentMood: md});
+        const dy = await Day.create({user: usr, mood: usr.currentMood});
+        await User.updateOne(usr,{$push: {days: dy}});
+        const token = signToken(usr);
+        return { token, usr };
       } catch (err) {
         console.log(err);
         throw new UserInputError('Incomplete Fields')
@@ -40,6 +65,40 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addMood: async (parent, argObj) => {
+      try {
+        return await Mood.create(argObj);
+      } catch (err) {
+        console.log(err);
+        throw new UserInputError('Incomplete Fields')
+      }
+    },
+    addDailyHabit: async (parent, argObj) => {
+      try {
+        return await DailyHabit.create(argObj);
+      } catch (err) {
+        console.log(err);
+        throw new UserInputError('Incomplete Fields')
+      }
+    },
+    // addDay: async (parent, argObj) => {
+    //   try {
+    //     let usr = await User.findOne(argObj);
+    //     return await Day.create({user: usr, mood: usr.currentMood});
+    //   } catch (err) {
+    //     console.log(err);
+    //     throw new UserInputError('Incomplete Fields')
+    //   }
+    // },
+    addDay: async (parent, argObj) => {
+      try {
+        const md = await Mood.findOne({numericV: 1});
+        return await Day.create({mood: md});
+      } catch (err) {
+        console.log(err);
+        throw new UserInputError('Incomplete Fields')
+      }
     },
   }
 };
