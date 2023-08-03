@@ -19,7 +19,7 @@ const styles = {
 
 const defaultHeadContent = (
   <>
-    <title>Affirmations</title>
+    <title>Affirmations!</title>
     <meta
       name="description"
       content="This is the default description of my App."
