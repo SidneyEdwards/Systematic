@@ -16,6 +16,7 @@ const generateOAuth2Client = () => new google.auth.OAuth2(process.env.CLIENT_ID,
 const mainOAuth2Client = generateOAuth2Client();
 
 const { User } = require('./models');
+const { title } = require('process');
 
 // --
 
@@ -102,15 +103,48 @@ app.post('/api/google/save-tasks/:id', async (req, res) => {
     const tasks = google.tasks({ version: 'v1', auth: oAuth2Client });
 
     // Define task details
-    const task = {
-      title: 'Sample Task 3',
-      notes: 'This is a test task.',
-    };
+    const taskToInsert = [
+    {
+      title: 'Cook Breakfast ',
+      notes: '',
+    },
+    {
+      title: 'Make the bed',
+      notes: '',
+    },
+    {
+      title: 'Run 1 mile',
+      notes: '',
+    },
+    {
+      title: 'Do 10 pushups!',
+      notes: '',
+    },
+    {
+      title: 'Do 15 situps!', 
+      notes: '',
+    },
+    {
+      title: 'Go to the grocery store',
+      notes: '',
+    },
+    {
+      title: 'Walk the dogs',
+      notes: '',
+    },
+    {
+      title: 'Clean the house',
+      notes: '',
+    },
+    
+  ];
 
     // Insert the task to the user's tasks list
+    for (const task of taskToInsert) {
     await tasks.tasks.insert({ tasklist: '@default', resource: task });
+    }
 
-    res.send('ok');
+    res.send('Tasks inserted to google calendar successfully.');
 
   } catch (err) {
     console.log(err);
