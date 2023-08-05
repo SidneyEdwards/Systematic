@@ -4,6 +4,7 @@ import { colors } from '../components/theme';
 import { Button, Grid, Container, Box, Typography } from '@mui/material';
 import button from '../components/button';
 // import Iconify from '../components/iconify';
+import { ThemeProvider } from '@mui/material/styles';
 import {
   BigPictureTasks,
   // GoToBlog
@@ -44,13 +45,14 @@ return (
 
 <Typography variant='h5' style={{ color: colors.white }}>
             </Typography>
-
+            <ThemeProvider theme={button}> 
             <Button
                 href='/ManageHabits'
                 variant='contained'
                 style={{ marginRight: 250, marginTop: 20 }} 
             > Manage Habits
             </Button>
+            </ThemeProvider>
             <Typography variant='h5' style={{ color: colors.white }}>
             <>...</>
 </Typography>
@@ -61,13 +63,14 @@ return (
 
 <Typography variant='h5' style={{ color: colors.white }}>
             </Typography>
-
+            <ThemeProvider theme={button}> 
             <Button
                 href='/Affirmations'
                 variant='contained'
                 style={{ marginRight: 250, marginTop: 0}} 
             > Affirmations Blog
             </Button>
+            </ThemeProvider>
             <Typography variant='h5' style={{ color: colors.white }}>
             <>...</>
 </Typography>

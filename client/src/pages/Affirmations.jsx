@@ -1,9 +1,10 @@
 import * as React from 'react';
-// import { Box, Grid, Typography, Button } from '@mui/material';
+import { Button } from '@mui/material';
 // import { styled } from '@mui/system';
 // import { useTheme } from '@mui/material/styles';
-import { colors } from '../components/theme';
 import Page from '../components/Page';
+import button from '../components/button';
+import { ThemeProvider } from '@mui/material/styles';
 
 // import { ThemeProvider } from '@mui/material/styles';
 
@@ -22,6 +23,15 @@ const headContent = (
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             }}>
+    <ThemeProvider theme={button}> 
+    <Button
+    href='/Dashboard'
+    variant='contained'
+    size='large'
+    style={{ marginRight: 0, marginTop: 300 }} 
+    > Back to Your Dashboard
+    </Button>
+    </ThemeProvider>
     </Page>
 );
 }
