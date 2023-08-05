@@ -1,4 +1,5 @@
 import Page from "../components/Page";
+import { useTheme} from '@mui/material/styles';
 // import { faker } from '@faker-js/faker';
 import { colors } from '../components/theme';
 // @mui
@@ -10,13 +11,15 @@ import {
   BigPictureTasks,
   // AppNewsUpdate,
   // ProgressTimeLine,
-  // WhereIsYourTimeSpent,
-  // HabitsInMotion,
+  HabitTracker,
+  WhereIsYourTimeSpent,
+  HabitsInMotion,
 } from '../sections/@dashboard/app';
 
 // ----------------------------------------------------------------------
 
 export default function Dashboard() {
+  const theme = useTheme();
 
 return (
 
@@ -36,12 +39,14 @@ return (
           justifyContent: 'right',
         }}
       >
-    <Container>
-      <Grid>
-      <Typography variant='h5' style={{ color: colors.white }}>
-            </Typography>
-          <Grid item xs={12} md={6} lg={8}>
-            <BigPictureTasks
+  <Container>
+
+  <Grid>
+    <Typography variant='h5' style={{ color: colors.white }}>
+
+    </Typography>
+      <Grid item xs={12} md={6} lg={8}>
+          <BigPictureTasks
               title="Big Picture Tasks"
               list={[
                 { id: '1', label: 'Be a good Student!' },
@@ -49,11 +54,73 @@ return (
                 { id: '3', label: 'Travel More!' },
 
               ]}
-            />
-            </Grid>
+          />
       </Grid>
-    </Container>
-    </Box>
+      
+    <></>
+    <Typography variant='h5' style={{ color: colors.white }}>
+      <>...</>
+    </Typography>
+      <Grid item xs={12} md={6} lg={8}>
+    <HabitTracker
+    title="HabitsInMotion" />
+      </Grid>
+
+  </Grid>
+        <Typography variant="h4" sx={{ mb: 5 }}>
+        <></>
+        </Typography>
+        <Grid>
+            <HabitsInMotion
+              title="HabitsInMotion"
+              subheader="(+43%) than last year"
+              chartLabels={[
+                '01/01/2003',
+                '02/01/2003',
+                '03/01/2003',
+                '04/01/2003',
+                '05/01/2003',
+                '06/01/2003',
+                '07/01/2003',
+                '08/01/2003',
+                '09/01/2003',
+                '10/01/2003',
+                '11/01/2003',
+              ]}
+              chartData={[
+                {
+                  name: 'You are Amazing!',
+                  type: 'column',
+                  fill: 'solid',
+                  data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
+                },
+
+              ]}
+            />
+          </Grid>
+          <Typography variant="h4" sx={{ mb: 5 }}>
+        <></>
+        </Typography>
+          <Grid item xs={12} md={6} lg={4}>
+            <WhereIsYourTimeSpent
+              title="Where is My Energy Spent"
+              chartData={[
+                { label: 'Habit1', value: 4344 },
+                { label: 'Habit2', value: 5435 },
+                { label: 'Habit3', value: 1443 },
+                { label: 'Habit4', value: 4443 },
+              ]}
+              chartColors={[
+                theme.palette.primary.main,
+                theme.palette.info.main,
+                theme.palette.warning.main,
+                theme.palette.error.main,
+              ]}
+            />
+          </Grid>
+
+  </Container>
+  </Box>
 </Page>
   );
   };

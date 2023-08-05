@@ -19,7 +19,7 @@ const GREY = {
 const PRIMARY = {
   lighter: '#D1E9FC',
   light: '#76B0F1',
-  main: '#2065D1',
+  main: "#db1f7a",
   dark: '#103996',
   darker: '#061B64',
   contrastText: '#fff',
@@ -37,7 +37,7 @@ const SECONDARY = {
 const INFO = {
   lighter: '#D0F2FF',
   light: '#74CAFF',
-  main: '#1890FF',
+  main: 'rgba(47, 42, 127, 0.8)',
   dark: '#0C53B7',
   darker: '#04297A',
   contrastText: '#fff',
@@ -55,7 +55,7 @@ const SUCCESS = {
 const WARNING = {
   lighter: '#FFF7CD',
   light: '#FFE16A',
-  main: '#FFC107',
+  main: '#ed93df',
   dark: '#B78103',
   darker: '#7A4F01',
   contrastText: GREY[800],
@@ -64,7 +64,7 @@ const WARNING = {
 const ERROR = {
   lighter: '#FFE7D9',
   light: '#FFA48D',
-  main: '#FF4842',
+  main: 'rgba(36, 33, 58, 0.75)',
   dark: '#B72136',
   darker: '#7A0C2E',
   contrastText: '#fff',
