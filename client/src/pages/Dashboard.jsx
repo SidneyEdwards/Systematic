@@ -56,6 +56,23 @@ return (
 </Typography>
 
 
+    <Typography variant='h5' style={{ color: colors.white }}>
+    </Typography>
+
+<Typography variant='h5' style={{ color: colors.white }}>
+            </Typography>
+
+            <Button
+                href='/Affirmations'
+                variant='contained'
+                style={{ marginRight: 250, marginTop: 0}} 
+            > Affirmations Blog
+            </Button>
+            <Typography variant='h5' style={{ color: colors.white }}>
+            <>...</>
+</Typography>
+
+
       <Grid item xs={12} md={6} lg={8}>
           <BigPictureTasks
               title="Big Picture Tasks"

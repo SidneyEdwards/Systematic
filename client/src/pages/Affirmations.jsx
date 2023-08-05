@@ -14,7 +14,7 @@ const headContent = (
     </>
     );
 
-    export default function ManageHabits() {
+    export default function Affirmations() {
         return (
             <Page isProtected={false} headContent={headContent} pageStyles={{
             backgroundImage: `url(/neon-bust.jpg)`,
