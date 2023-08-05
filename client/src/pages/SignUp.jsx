@@ -83,7 +83,7 @@ export default function SignUp() {
   }
 
   return (
-    <Page isProtected={false} isProtected={false} title={'Login-Page'} class-name= 'Login-Page' isProtected={false} pageStyles={{
+    <Page isProtected={false} title={'Login-Page'} class-name= 'Login-Page' pageStyles={{
       backgroundImage: `url(/neon.jpg)`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',

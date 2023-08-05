@@ -36,13 +36,12 @@ return (
 
     <Grid>
             <Typography variant='h5' style={{ color: colors.white }}>
-            <h2></h2>
             </Typography>
             <ThemeProvider theme={button}> 
             <Button
                 href='/Login'
                 variant='contained'
-                style={{ marginRight: '50px', marginTop: 0 }} 
+                style={{ marginRight: '55px', marginTop: 300 }} 
             > Login
             </Button>
             </ThemeProvider>
@@ -50,7 +49,7 @@ return (
             <Button
                 href='/SignUp'
                 variant='contained'
-                style={{ marginRight: '40px', marginTop: 0 }} 
+                style={{ marginRight: 250, marginTop: 300 }} 
             > Sign-Up
             </Button>
             </ThemeProvider>
