@@ -8,6 +8,16 @@ import { Navigate } from "react-router-dom";
 import Page from "../components/Page";
 import AuthService from "../utils/auth";
 
+
+// import { Box, Grid, Typography, Button } from '@mui/material';
+// import { styled } from '@mui/system';
+// import { useTheme } from '@mui/material/styles';
+// import { colors } from '../components/theme';
+// import button from '../components/button';
+// import Page from '../components/Page';
+// import { ThemeProvider } from '@mui/material/styles';
+
+
 const styles = {
   form: {
     display: "flex",
@@ -19,12 +29,6 @@ const styles = {
   },
 };
 
-const headContent = (
-  <>
-    <title>Change Me! - Login</title>
-    <meta name="description" content="Login for Project-3 Starter Code." />
-  </>
-);
 
 export default function Login() {
   const [loginUser, { error, data, loading }] = useMutation(LOGIN_USER);
@@ -63,8 +67,13 @@ export default function Login() {
   }
 
   return (
-    <Page isProtected={false} headContent={headContent}>
-      <div>Login</div>
+    <Page title={'LogIn-Page'} class-name= 'LogIn-Page' isProtected={false} pageStyles={{
+      backgroundImage: `url(/pink-neon.jpg)`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+    }}
+    >
       <form style={styles.form} onSubmit={handleFormSubmit}>
         <input
           placeholder="Email"
