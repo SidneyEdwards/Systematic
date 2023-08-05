@@ -11,6 +11,7 @@ import {
   BigPictureTasks,
   // AppNewsUpdate,
   // ProgressTimeLine,
+  MoodTracker,
   HabitTracker,
   WhereIsYourTimeSpent,
   HabitsInMotion,
@@ -61,8 +62,19 @@ return (
     <Typography variant='h5' style={{ color: colors.white }}>
       <>...</>
     </Typography>
+
       <Grid item xs={12} md={6} lg={8}>
     <HabitTracker
+    title="HabitsInMotion" />
+      </Grid>
+
+      <></>
+    <Typography variant='h5' style={{ color: colors.white }}>
+      <>...</>
+    </Typography>
+
+    <Grid item xs={12} md={6} lg={8}>
+    <MoodTracker
     title="HabitsInMotion" />
       </Grid>
 
@@ -73,19 +85,19 @@ return (
         <Grid>
             <HabitsInMotion
               title="HabitsInMotion"
-              subheader="(+43%) than last year"
+              subheader="Habits Completed (+43%) than last year"
               chartLabels={[
-                '01/01/2003',
-                '02/01/2003',
-                '03/01/2003',
-                '04/01/2003',
-                '05/01/2003',
-                '06/01/2003',
-                '07/01/2003',
-                '08/01/2003',
-                '09/01/2003',
-                '10/01/2003',
-                '11/01/2003',
+                '01/01/2023',
+                '02/01/2023',
+                '03/01/2023',
+                '04/01/2023',
+                '05/01/2023',
+                '06/01/2023',
+                '07/01/2023',
+                '08/01/2023',
+                '09/01/2023',
+                '10/01/2023',
+                '11/01/2023',
               ]}
               chartData={[
                 {
