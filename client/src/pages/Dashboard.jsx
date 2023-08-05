@@ -1,16 +1,12 @@
 import Page from "../components/Page";
 import { useTheme} from '@mui/material/styles';
-// import { faker } from '@faker-js/faker';
 import { colors } from '../components/theme';
-// @mui
-import { Grid, Container, Box, Typography } from '@mui/material';
-// components
+import { Button, Grid, Container, Box, Typography } from '@mui/material';
+import button from '../components/button';
 // import Iconify from '../components/iconify';
-// sections
 import {
   BigPictureTasks,
-  // AppNewsUpdate,
-  // ProgressTimeLine,
+  // GoToBlog
   MoodTracker,
   HabitTracker,
   WhereIsYourTimeSpent,
@@ -44,8 +40,22 @@ return (
 
   <Grid>
     <Typography variant='h5' style={{ color: colors.white }}>
-
     </Typography>
+
+<Typography variant='h5' style={{ color: colors.white }}>
+            </Typography>
+
+            <Button
+                href='/ManageHabits'
+                variant='contained'
+                style={{ marginRight: 250, marginTop: 20 }} 
+            > Manage Habits
+            </Button>
+            <Typography variant='h5' style={{ color: colors.white }}>
+            <>...</>
+</Typography>
+
+
       <Grid item xs={12} md={6} lg={8}>
           <BigPictureTasks
               title="Big Picture Tasks"
