@@ -17,7 +17,7 @@ const headContent = (
     export default function Affirmations() {
         return (
             <Page isProtected={false} headContent={headContent} pageStyles={{
-            backgroundImage: `url(/neon-bust.jpg)`,
+            backgroundImage: `url(/model-affirmations.jpg)`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',

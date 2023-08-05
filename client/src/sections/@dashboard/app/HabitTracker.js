@@ -15,15 +15,22 @@ plotOptions: {
     colorScale: {
         ranges: [
         {
-            from: -1,
+            from: 0,
             to: 15,
             color: "#4caf50",
-            name: "low"
+            name: "Completed"
+        },
+        {
+          from: 16,
+          to: 50,
+          color: "#db1f7a",
+          name: "Not Completed"
         }
-        ]
+      ]
     }
-    }
-},
+  }
+  },
+
 dataLabels: {
     enabled: false
 },
@@ -204,7 +211,7 @@ var series = [
     44,
     36,
     36,
-    90,
+    15,
     28,
     8,
     16,

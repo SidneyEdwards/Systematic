@@ -10,13 +10,10 @@ import Page from "../components/Page";
 import AuthService from "../utils/auth";
 
 
-import { Grid, Box, Typography, Button, Card } from '@mui/material';
+import { Grid, Box, Button, Card } from '@mui/material';
 import { styled } from '@mui/system';
-
 //import { colors } from '../components/theme';
 
-
-// import { ThemeProvider } from '@mui/material/styles';
 
 
 const styles = {

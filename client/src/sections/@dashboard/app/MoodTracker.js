@@ -16,14 +16,39 @@ var options = {
         ranges: [
           {
             from: -1,
-            to: 15,
-            color: "#4caf50",
-            name: "low"
+            to: 10,
+            color: "#2f4f4f",
+            name: "very low"
+          },
+          {
+            from: 11,
+            to: 20,
+            color: "#1e90ff",
+            name: "Not Feeling My Best"
+          },
+          {
+            from: 21,
+            to: 30,
+            color: "#e38d42",
+            name: "medium"
+          },
+          {
+            from: 31,
+            to: 40,
+            color: "#228b22",
+            name: "pretty good"
+          },
+          {
+            from: 31,
+            to: 50,
+            color: "#ffd700",
+            name: "Amazing!"
           }
         ]
       }
     }
   },
+  
   dataLabels: {
     enabled: false
   },
@@ -38,10 +63,10 @@ var series = [
     data: formatData([
       0,
       0,
-      0,
-      0,
+      31,
+      35,
       5,
-      6,
+      36,
       45,
       45,
       30,
@@ -55,18 +80,18 @@ var series = [
       45,
       40,
       25,
-      5,
+      33,
       20,
       25,
       40,
       5,
       5,
       5,
+      37,
       5,
-      5,
-      5,
-      5,
-      5
+      38,
+      39,
+      50
 
     ])
   },
