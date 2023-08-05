@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 // import { Box, Grid, Typography, Button } from '@mui/material';
 // import { styled } from '@mui/system';
 // import { useTheme } from '@mui/material/styles';
@@ -6,7 +7,6 @@ import * as React from 'react';
 import Page from '../components/Page';
 
 // import { ThemeProvider } from '@mui/material/styles';
-
 
 
     export default function ManageHabits() {
@@ -27,6 +27,7 @@ import Page from '../components/Page';
         </label>
     </fieldset>
     <button type="submit">Submit</button>
+
     </form>
     </div>
 
