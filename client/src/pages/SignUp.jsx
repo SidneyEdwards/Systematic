@@ -4,6 +4,10 @@ import { ADD_USER } from "../graphql/mutations";
 import { useSelector } from "react-redux";
 import { getUser } from "../redux/slices/userSlice";
 import { Navigate } from "react-router-dom";
+import { Grid, Box, Typography, Button, Card } from '@mui/material';
+import { styled } from '@mui/system';
+import { ThemeProvider } from '@mui/material/styles';
+import button from '../components/button';
 
 import Page from "../components/Page";
 import AuthService from "../utils/auth";
@@ -19,15 +23,26 @@ const styles = {
   },
 };
 
-const headContent = (
-  <>
-    <title>Change Me! - Sign Up</title>
-    <meta
-      name="description"
-      content="Sign Up page for Project-3 Starter Code."
-    />
-  </>
-);
+const Container = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  minHeight: '100vh',
+
+});
+
+const StyledCard = styled(Card)({
+  padding: '10px',
+  width: '100%',
+  maxWidth: '500px',
+  boxSizing: 'border-box',
+  borderRadius: '10px',
+
+
+});
+
+
 
 export default function SignUp() {
   const [addUser, { error, data, loading }] = useMutation(ADD_USER);
@@ -68,8 +83,16 @@ export default function SignUp() {
   }
 
   return (
-    <Page isProtected={false} headContent={headContent}>
-      <div>Sign Up</div>
+    <Page isProtected={false} isProtected={false} title={'Login-Page'} class-name= 'Login-Page' isProtected={false} pageStyles={{
+      backgroundImage: `url(/neon.jpg)`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+    }}>
+  <Container>
+      <Grid>
+        <StyledCard>
+          <h2 style={{ textAlign: 'center' }}>Sign-Up</h2>
       <form style={styles.form} onSubmit={handleFormSubmit}>
         <input
           placeholder="First Name"
@@ -100,16 +123,23 @@ export default function SignUp() {
           onChange={handleChange}
         />
         {loading ? (
-          <button type="submit" disabled={true} style={styles.submitBtn}>
+          <ThemeProvider theme={button}> 
+          <Button> type="submit" disabled={true} style={styles.submitBtn}
             Loading...
-          </button>
+          </Button>
+          </ThemeProvider>
         ) : (
-          <button type="submit" style={styles.submitBtn}>
+          <ThemeProvider theme={button}> 
+          <Button type="submit" variant= "contained" style={styles.submitBtn}>
             Submit
-          </button>
+          </Button>
+          </ThemeProvider>
         )}
       </form>
       {error && <h3>{error.message}</h3>}
+          </StyledCard>
+        </Grid>
+      </Container>
     </Page>
   );
 }

@@ -29,7 +29,6 @@ return (
         sx={{
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row' },
-
         alignItems: 'center',
         justifyContent: 'center',
         }}
@@ -43,7 +42,7 @@ return (
             <Button
                 href='/Login'
                 variant='contained'
-                style={{ marginRight: '40px', marginTop: 0 }} 
+                style={{ marginRight: '50px', marginTop: 0 }} 
             > Login
             </Button>
             </ThemeProvider>

@@ -4,17 +4,18 @@ import { LOGIN_USER } from "../graphql/mutations";
 import { useSelector } from "react-redux";
 import { getUser } from "../redux/slices/userSlice";
 import { Navigate } from "react-router-dom";
-
+import button from '../components/button';
+import { ThemeProvider } from '@mui/material/styles';
 import Page from "../components/Page";
 import AuthService from "../utils/auth";
 
 
-// import { Box, Grid, Typography, Button } from '@mui/material';
-// import { styled } from '@mui/system';
-// import { useTheme } from '@mui/material/styles';
-// import { colors } from '../components/theme';
-// import button from '../components/button';
-// import Page from '../components/Page';
+import { Grid, Box, Typography, Button, Card } from '@mui/material';
+import { styled } from '@mui/system';
+
+//import { colors } from '../components/theme';
+
+
 // import { ThemeProvider } from '@mui/material/styles';
 
 
@@ -28,6 +29,23 @@ const styles = {
     cursor: "pointer",
   },
 };
+
+const Container = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  minHeight: '100vh',
+});
+
+const StyledCard = styled(Card)({
+  padding: '20px',
+  width: '100%',
+  maxWidth: '400px',
+  boxSizing: 'border-box',
+  borderRadius: '15px',
+
+});
 
 
 export default function Login() {
@@ -67,13 +85,17 @@ export default function Login() {
   }
 
   return (
-    <Page title={'LogIn-Page'} class-name= 'LogIn-Page' isProtected={false} pageStyles={{
+    <Page isProtected={false} title={'Login-Page'} class-name= 'Login-Page' pageStyles={{
       backgroundImage: `url(/pink-neon.jpg)`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
     }}
     >
+    <Container>
+        <Grid>
+          <StyledCard>
+          <h2 style={{ textAlign: 'center' }}>Login</h2>
       <form style={styles.form} onSubmit={handleFormSubmit}>
         <input
           placeholder="Email"
@@ -90,16 +112,23 @@ export default function Login() {
           onChange={handleChange}
         />
         {loading ? (
-          <button type="submit" disabled={true} style={styles.submitBtn}>
+          <ThemeProvider theme={button}> 
+          <Button> type="submit" disabled={true} style={styles.submitBtn}
             Loading...
-          </button>
+          </Button>
+          </ThemeProvider>
         ) : (
-          <button type="submit" style={styles.submitBtn}>
+          <ThemeProvider theme={button}> 
+          <Button type="submit" variant= "contained" style={styles.submitBtn}>
             Submit
-          </button>
+          </Button>
+          </ThemeProvider>
         )}
       </form>
       {error && <h3>{error.message}</h3>}
+          </StyledCard>
+        </Grid>
+      </Container>
     </Page>
   );
 }
