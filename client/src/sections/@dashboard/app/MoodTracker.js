@@ -17,32 +17,32 @@ var options = {
           {
             from: -1,
             to: 10,
-            color: "#2f4f4f",
-            name: "very low"
+            color: "#191970",
+            name: "Awful"
           },
           {
             from: 11,
             to: 20,
-            color: "#1e90ff",
-            name: "Not Feeling My Best"
+            color: "#4b0082",
+            name: "Bad"
           },
           {
             from: 21,
             to: 30,
-            color: "#e38d42",
-            name: "medium"
+            color: "#008000",
+            name: "Meh"
           },
           {
             from: 31,
             to: 40,
-            color: "#228b22",
-            name: "pretty good"
+            color: "#ff69b4",
+            name: "Good"
           },
           {
             from: 31,
             to: 50,
-            color: "#ffd700",
-            name: "Amazing!"
+            color: "#c71585",
+            name: "Fantastic!"
           }
         ]
       }
@@ -63,32 +63,32 @@ var series = [
     data: formatData([
       0,
       0,
-      31,
-      35,
+      1,
+      2,
       5,
-      36,
-      45,
-      45,
-      30,
-      20,
-      5,
-      5,
+      6,
+      8,
+      9,
+      11,
+      13,
       15,
-      35,
-      35,
+      16,
+      17,
       20,
+      21,
+      23,
+      25,
+      26,
+      27,
+      39,
+      40,
+      43,
       45,
-      40,
-      25,
-      33,
-      20,
-      25,
-      40,
-      5,
-      5,
-      5,
-      37,
-      5,
+      47,
+      49,
+      50,
+      50,
+      50,
       38,
       39,
       50
