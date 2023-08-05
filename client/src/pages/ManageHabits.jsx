@@ -1,38 +1,26 @@
-import * as React from 'react';
+import React, { useState } from 'react';
+import HabitForm from '../components/HabitForm';
+import HabitList from '../components/HabitList';
 
-// import { Box, Grid, Typography, Button } from '@mui/material';
-// import { styled } from '@mui/system';
-// import { useTheme } from '@mui/material/styles';
-// import { colors } from '../components/theme';
-import Page from '../components/Page';
+const App = () => {
+const [habits, setHabits] = useState([]);
 
-// import { ThemeProvider } from '@mui/material/styles';
+const addHabit = (habit) => {
+    setHabits([...habits, habit]);
+};
 
+const deleteHabit = (index) => {
+    const newHabits = habits.filter((_, i) => i !== index);
+    setHabits(newHabits);
+};
 
-    export default function ManageHabits() {
-        return (
-            <Page isProtected={false} pageStyles={{
-            backgroundImage: `url(/neon-bust.jpg)`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            }}>
-                    <div className="wrapper">
-    <h1>Create a New Habit</h1>
-    <form>
-    <fieldset>
-        <label>
-        <p>Habit</p>
-        <input name="name" />
-        </label>
-    </fieldset>
-    <button type="submit">Submit</button>
-
-    </form>
+return (
+    <div>
+    <h1>Habit Tracker</h1>
+    <HabitForm addHabit={addHabit} />
+    <HabitList habits={habits} deleteHabit={deleteHabit} />
     </div>
-
-    <div>Current Habits</div>
-
-    </Page>
 );
-}
+};
+
+export default App;
