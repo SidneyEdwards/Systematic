@@ -37,13 +37,12 @@ export default function Home(){
     <Container>
       <Grid>
             <Typography variant='h5' style={{ color: colors.white }}>
-              <h2></h2>
             </Typography>
             <ThemeProvider theme={button}> 
               <Button
                 href='/LogInAndSignUp'
                 variant='contained'
-                style={{ marginRight: '40px', marginTop: 0 }} 
+                style={{ marginRight: 165, marginTop: 450 }} 
               > Start Here
               </Button>
             </ThemeProvider>
