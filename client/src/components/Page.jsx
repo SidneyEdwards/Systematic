@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useSelector } from "react-redux";
 import { getUser } from "../redux/slices/userSlice";
 
-import Header from "./Header";
+
 import Footer from "./Footer";
 
 const styles = {
@@ -40,7 +40,6 @@ export default function Page({
   return (
     <>
       <Helmet>{headContent}</Helmet>
-      <Header />
       <div style={{ ...styles.container, ...pageStyles}}>
         <main style={styles.main}>
           {isProtected && !isAuthenticated ? <div>Unauthorized</div> : children}
