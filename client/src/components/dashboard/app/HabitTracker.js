@@ -3,8 +3,6 @@ import ReactApexChart from "react-apexcharts";
 import { Card, CardHeader, Box } from '@mui/material';
 
 
-
-
 var options = {
 chart: {
     height: 350,

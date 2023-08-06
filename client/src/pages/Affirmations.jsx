@@ -1,27 +1,46 @@
 import * as React from 'react';
-import { Button } from '@mui/material';
-// import { styled } from '@mui/system';
-// import { useTheme } from '@mui/material/styles';
+import { styled } from '@mui/system';
 import Page from '../components/Page';
 import button from '../components/button';
 import { ThemeProvider } from '@mui/material/styles';
-import AffirmationsPost from '../components/AffirmationsPost';
+import AffirmationsPost from '../components/Affirmations/AffirmationsPost';
+import { Grid, Box, Button, Card } from '@mui/material';
 
 
-// import { ThemeProvider } from '@mui/material/styles';
+const StyledCard = styled(Card)({
+    padding: '20px',
+    width: '100%',
+    maxWidth: '400px',
+    boxSizing: 'border-box',
+    borderRadius: '15px',
+    backgroundColor: 'rgba(0,0,0,.4)',
+    color: 'white'
 
+});
+
+const Container = styled(Box)({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'left',
+    justifyContent: 'left',
+    minHeight: '100vh',
+});
 
     export default function Affirmations() {
         return (
-            <Page isProtected={false} pageStyles={{
-            backgroundImage: `url(/model-affirmations.jpg)`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
+<Page isProtected={false} pageStyles={{
+    backgroundImage: `url(/model-affirmations.jpg)`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
             }}>
-    <div>
+
+<Container>
+    <Grid>
+        <Box>
+            <StyledCard>
     <AffirmationsPost />
-    </div>
+
     <ThemeProvider theme={button}> 
     <Button
     href='/Dashboard'
@@ -31,7 +50,11 @@ import AffirmationsPost from '../components/AffirmationsPost';
     > Back to Your Dashboard
     </Button>
     </ThemeProvider>
-    </Page>
+                </StyledCard>
+            </Box>
+        </Grid>
+</Container>
+</Page>
 );
 }
 

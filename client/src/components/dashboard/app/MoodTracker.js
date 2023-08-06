@@ -54,6 +54,7 @@ var options = {
   },
   title: {
     text: "Daily Mood Tracker"
+
   }
 };
 
