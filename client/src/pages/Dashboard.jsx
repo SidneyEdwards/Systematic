@@ -22,7 +22,7 @@ export default function Dashboard() {
 return (
 
 <Page title={'Dashboard'} class-name='Dashboard' isProtected={false} pageStyles={{
-      backgroundImage: `url(/Pink-Brick.jpg)`,
+      backgroundImage: `url(/pink-brick.jpg)`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
