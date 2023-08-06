@@ -3,16 +3,14 @@ import { useTheme} from '@mui/material/styles';
 import { colors } from '../components/theme';
 import { Button, Grid, Container, Box, Typography } from '@mui/material';
 import button from '../components/button';
-// import Iconify from '../components/iconify';
 import { ThemeProvider } from '@mui/material/styles';
 import {
   BigPictureTasks,
-  // GoToBlog
   MoodTracker,
   HabitTracker,
   WhereIsYourTimeSpent,
   HabitsInMotion,
-} from '../sections/@dashboard/app';
+} from '../components/dashboard/app';
 
 // ----------------------------------------------------------------------
 
