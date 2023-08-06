@@ -3,9 +3,9 @@ import {Button} from '@mui/material';
 
 
 const styles = {
-    input:{
-        fontSize: '20px'
-    }
+input:{
+    fontSize: '20px'
+}
 }
 
 const {input} = styles;
