@@ -3,7 +3,7 @@ import { styled } from '@mui/system';
 import Page from '../components/Page';
 import button from '../components/button';
 import { ThemeProvider } from '@mui/material/styles';
-import AffirmationsPost from '../components/Affirmations/AffirmationsPost';
+import Posts from '../components/Affirmations/AffirmationsPost';
 import { Grid, Box, Button, Card } from '@mui/material';
 
 
@@ -39,7 +39,7 @@ const Container = styled(Box)({
     <Grid>
         <Box>
             <StyledCard>
-    <AffirmationsPost />
+                    <Posts />
 
     <ThemeProvider theme={button}> 
     <Button
