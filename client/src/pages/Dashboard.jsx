@@ -85,17 +85,14 @@ return (
               ]}
           />
       </Grid>
-      
     <></>
     <Typography variant='h5' style={{ color: colors.white }}>
       <>...</>
     </Typography>
-
       <Grid item xs={12} md={6} lg={8}>
     <HabitTracker
     title="HabitsInMotion" />
       </Grid>
-
       <></>
     <Typography variant='h5' style={{ color: colors.white }}>
       <>...</>
@@ -123,16 +120,13 @@ return (
                 '06/01/2023',
                 '07/01/2023',
                 '08/01/2023',
-                '09/01/2023',
-                '10/01/2023',
-                '11/01/2023',
               ]}
               chartData={[
                 {
                   name: 'You are Amazing!',
                   type: 'column',
                   fill: 'solid',
-                  data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
+                  data: [38, 35, 30, 45, 47, 50, 40, 21],
                 },
 
               ]}
@@ -145,16 +139,16 @@ return (
             <WhereIsYourTimeSpent
               title="Where is My Energy Spent"
               chartData={[
-                { label: 'Habit1', value: 4344 },
-                { label: 'Habit2', value: 5435 },
-                { label: 'Habit3', value: 1443 },
-                { label: 'Habit4', value: 4443 },
+                { label: 'Call Mom', value: 4344 },
+                { label: '4 Hours of Coding', value: 5435 },
+                { label: '20 minutes of Meditation', value: 1443 },
+                { label: 'Run 3 Miles', value: 4443 },
               ]}
               chartColors={[
                 theme.palette.primary.main,
-                theme.palette.info.main,
+                theme.palette.success.light,
                 theme.palette.warning.main,
-                theme.palette.error.main,
+                theme.palette.secondary.light,
               ]}
             />
           </Grid>

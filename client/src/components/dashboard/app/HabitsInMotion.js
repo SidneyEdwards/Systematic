@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types';
 import ReactApexChart from 'react-apexcharts';
-// @mui
 import { Card, CardHeader, Box } from '@mui/material';
-// components
 import { useChart } from '../../../components/chart';
 
-// ----------------------------------------------------------------------
+
 
 HabitsInMotion.propTypes = {
   title: PropTypes.string,
@@ -26,7 +24,7 @@ export default function HabitsInMotion({ title, subheader, chartLabels, chartDat
       y: {
         formatter: (y) => {
           if (typeof y !== 'undefined') {
-            return `${y.toFixed(0)} visits`;
+            return `${y.toFixed(0)} Habits Completed`;
           }
           return y;
         },

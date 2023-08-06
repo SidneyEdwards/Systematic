@@ -1,8 +1,7 @@
 import merge from 'lodash/merge';
-// @mui
 import { useTheme, alpha } from '@mui/material/styles';
 
-// ----------------------------------------------------------------------
+
 
 export default function useChart(options) {
   const theme = useTheme();
@@ -25,29 +24,23 @@ export default function useChart(options) {
   };
 
   const baseOptions = {
-    // Colors
+
     colors: [
       theme.palette.primary.main,
-      theme.palette.warning.main,
-      theme.palette.info.main,
-      theme.palette.error.main,
-      theme.palette.success.main,
-      theme.palette.warning.dark,
-      theme.palette.success.darker,
-      theme.palette.info.dark,
-      theme.palette.info.darker,
+      theme.palette.secondary.light,
+      theme.palette.success.light,
     ],
 
-    // Chart
+
     chart: {
       toolbar: { show: false },
       zoom: { enabled: false },
-      // animations: { enabled: false },
+
       foreColor: theme.palette.text.disabled,
       fontFamily: theme.typography.fontFamily,
     },
 
-    // States
+
     states: {
       hover: {
         filter: {
@@ -63,7 +56,7 @@ export default function useChart(options) {
       },
     },
 
-    // Fill
+
     fill: {
       opacity: 1,
       gradient: {
@@ -75,17 +68,16 @@ export default function useChart(options) {
       },
     },
 
-    // Datalabels
     dataLabels: { enabled: false },
 
-    // Stroke
+
     stroke: {
       width: 3,
       curve: 'smooth',
       lineCap: 'round',
     },
 
-    // Grid
+
     grid: {
       strokeDashArray: 3,
       borderColor: theme.palette.divider,
@@ -96,26 +88,24 @@ export default function useChart(options) {
       },
     },
 
-    // Xaxis
+
     xaxis: {
       axisBorder: { show: false },
       axisTicks: { show: false },
     },
 
-    // Markers
+
     markers: {
       size: 0,
       strokeColors: theme.palette.background.paper,
     },
 
-    // Tooltip
     tooltip: {
       x: {
         show: false,
       },
     },
 
-    // Legend
     legend: {
       show: true,
       fontSize: String(13),
@@ -131,9 +121,9 @@ export default function useChart(options) {
       },
     },
 
-    // plotOptions
+
     plotOptions: {
-      // Bar
+
       bar: {
         borderRadius: 4,
         columnWidth: '28%',
@@ -141,7 +131,7 @@ export default function useChart(options) {
         borderRadiusWhenStacked: 'last',
       },
 
-      // Pie + Donut
+
       pie: {
         donut: {
           labels: {
@@ -152,7 +142,7 @@ export default function useChart(options) {
         },
       },
 
-      // Radialbar
+
       radialBar: {
         track: {
           strokeWidth: '100%',
@@ -164,7 +154,6 @@ export default function useChart(options) {
         },
       },
 
-      // Radar
       radar: {
         polygons: {
           fill: { colors: ['transparent'] },
@@ -173,7 +162,7 @@ export default function useChart(options) {
         },
       },
 
-      // polarArea
+
       polarArea: {
         rings: {
           strokeColor: theme.palette.divider,
@@ -184,17 +173,17 @@ export default function useChart(options) {
       },
     },
 
-    // Responsive
+
     responsive: [
       {
-        // sm
+
         breakpoint: theme.breakpoints.values.sm,
         options: {
           plotOptions: { bar: { columnWidth: '40%' } },
         },
       },
       {
-        // md
+
         breakpoint: theme.breakpoints.values.md,
         options: {
           plotOptions: { bar: { columnWidth: '32%' } },
