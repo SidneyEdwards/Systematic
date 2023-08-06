@@ -61,7 +61,10 @@ return (
 
 <StyledCard>
     <h1>Habit Tracker</h1>
-    <HabitForm addHabit={addHabit} />
+
+    <HabitForm theme={button} addHabit={addHabit}
+
+/>
     <HabitList habits={habits} deleteHabit={deleteHabit} />
     <ThemeProvider theme={button}> 
     <Button

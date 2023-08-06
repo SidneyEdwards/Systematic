@@ -17,7 +17,7 @@ var options = {
           {
             from: -1,
             to: 10,
-            color: "#191970",
+            color: "#1e90ff",
             name: "Awful"
           },
           {
@@ -35,7 +35,7 @@ var options = {
           {
             from: 31,
             to: 40,
-            color: "#ff69b4",
+            color: "#ffa500",
             name: "Good"
           },
           {
@@ -79,9 +79,9 @@ var series = [
       23,
       25,
       26,
-      27,
-      39,
-      40,
+      34,
+      35,
+      38,
       43,
       45,
       47,
