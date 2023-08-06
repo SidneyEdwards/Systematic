@@ -21,6 +21,7 @@ const styles = {
     display: "flex",
     flexDirection: "Column",
     width: "300px",
+    justifyContent: "center"
   },
   submitBtn: {
     cursor: "pointer",
@@ -41,6 +42,7 @@ const StyledCard = styled(Card)({
   maxWidth: '400px',
   boxSizing: 'border-box',
   borderRadius: '15px',
+  backgroundColor: 'rgba(0,0,0,.4)'
 
 });
 

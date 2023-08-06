@@ -33,11 +33,13 @@ const Container = styled(Box)({
 });
 
 const StyledCard = styled(Card)({
-  padding: '10px',
+  padding: '20px',
   width: '100%',
   maxWidth: '500px',
   boxSizing: 'border-box',
   borderRadius: '10px',
+  color: 'white',
+  backgroundColor: 'rgba(0,0,0,.4)'
 
 
 });

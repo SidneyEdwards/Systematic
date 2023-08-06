@@ -5,24 +5,23 @@ import { Button } from '@mui/material';
 import Page from '../components/Page';
 import button from '../components/button';
 import { ThemeProvider } from '@mui/material/styles';
+import AffirmationsPost from '../components/AffirmationsPost';
+
 
 // import { ThemeProvider } from '@mui/material/styles';
 
-const headContent = (
-    <>
-        <title>Affirmations</title>
-        <meta name="description" content="Welcome! Log in or Sign Up to Get Started." />
-    </>
-    );
 
     export default function Affirmations() {
         return (
-            <Page isProtected={false} headContent={headContent} pageStyles={{
+            <Page isProtected={false} pageStyles={{
             backgroundImage: `url(/model-affirmations.jpg)`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             }}>
+    <div>
+    <AffirmationsPost />
+    </div>
     <ThemeProvider theme={button}> 
     <Button
     href='/Dashboard'
@@ -35,3 +34,10 @@ const headContent = (
     </Page>
 );
 }
+
+
+
+
+
+
+

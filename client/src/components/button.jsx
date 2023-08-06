@@ -11,6 +11,7 @@ components: {
         boxShadow: colors.shadow,
         borderRadius: "15px",
         marginTop: '10px',
+        marginLeft: '15px',
         fontWeight: 'bold',
         fontSize: '17px',
         '&:hover': {

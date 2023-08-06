@@ -1,4 +1,14 @@
 import React, { useState } from 'react';
+import {Button} from '@mui/material';
+
+
+const styles = {
+    input:{
+        fontSize: '20px'
+    }
+}
+
+const {input} = styles;
 
 const HabitForm = ({ addHabit }) => {
 const [habit, setHabit] = useState('');
@@ -14,10 +24,14 @@ const handleSubmit = (event) => {
 };
 
 return (
+
     <form onSubmit={handleSubmit}>
-    <input type="text" value={habit} onChange={handleChange} placeholder="Enter a new habit" />
-    <button type="submit">Add Habit</button>
+    <input style= {input} type="text" value={habit} onChange={handleChange} placeholder="Enter a new habit" />
+
+    <Button type="submit">Add Habit
+    </Button>
     </form>
+
 );
 };
 

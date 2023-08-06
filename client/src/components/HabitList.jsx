@@ -1,20 +1,36 @@
 import React from 'react';
+import { Button } from '@mui/material';
+
+
+const styles = {
+    ul:{
+        fontSize: '25px'
+    },
+    li:{
+        fontSize: '25px'
+        
+    }
+}
 
 const HabitList = ({ habits, deleteHabit }) => {
 const handleDelete = (index) => {
     deleteHabit(index);
 };
+const {ul, li} = styles;
+
+
 
 return (
-    <ul>
+    <ul style= {ul}>
     {habits.map((habit, index) => (
-        <li key={index}>
+        <li style= {li} key={index}>
         {habit}
-        <button onClick={() => handleDelete(index)}>Delete</button>
+        <Button onClick={() => handleDelete(index)}>Delete</Button>
         </li>
     ))}
     </ul>
-);
-};
+)
+}
+
 
 export default HabitList;
