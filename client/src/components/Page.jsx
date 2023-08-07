@@ -35,7 +35,7 @@ export default function Page({
 }) {
   const { isAuthenticated } = useSelector(getUser());
 
-  console.log(pageStyles);
+  // console.log(pageStyles);
 
   return (
     <>

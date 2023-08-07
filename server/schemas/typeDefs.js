@@ -62,6 +62,7 @@ const typeDefs = gql`
     loginUser(email: String!, password: String!): Auth
     addMood(numericV: Int!): Mood
     addDailyHabit(name: String!): DailyHabit
+    addManyDailyHabits(namesArr: [String]): [DailyHabit]
     addDay: Day
   }
 `;

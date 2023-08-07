@@ -31,3 +31,12 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_MANY_HABITS = gql`
+  mutation AddManyDailyHabits($namesArr: [String]) {
+    addManyDailyHabits(namesArr: $namesArr) {
+      _id
+      name
+    }
+  }
+`
