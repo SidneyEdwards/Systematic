@@ -26,34 +26,37 @@ const Container = styled(Box)({
     minHeight: '100vh',
 });
 
-    export default function Affirmations() {
-        return (
-<Page isProtected={false} pageStyles={{
+export default function Affirmations() {
+
+  return (
+<Page 
+  isProtected={false} 
+  pageStyles={{
     backgroundImage: `url(/model-affirmations.jpg)`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-            }}>
-
-<Container>
+  }}
+>
+  <Container>
     <Grid>
-        <Box>
-            <StyledCard>
-                    <Posts />
-
-    <ThemeProvider theme={button}> 
-    <Button
-    href='/Dashboard'
-    variant='contained'
-    size='large'
-    style={{ marginRight: 0, marginTop: 300 }} 
-    > Back to Your Dashboard
-    </Button>
-    </ThemeProvider>
-                </StyledCard>
-            </Box>
-        </Grid>
-</Container>
+      <Box>
+        <StyledCard>
+          <Posts />
+          <ThemeProvider theme={button}> 
+            <Button
+              href='/Dashboard'
+              variant='contained'
+              size='large'
+              style={{ marginRight: 0, marginTop: 300 }} 
+            > 
+              Back to Your Dashboard
+            </Button>
+          </ThemeProvider>
+        </StyledCard>
+      </Box>
+    </Grid>
+  </Container>
 </Page>
 );
 }

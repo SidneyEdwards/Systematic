@@ -33,10 +33,10 @@ export default function BigPictureTasks({ title, subheader, list, ...other }) {
             <>
               {list.map((task) => (
                 <TaskItem
-                  key={task.id}
+                  key={task._id}
                   task={task}
-                  checked={field.value.includes(task.id)}
-                  onChange={() => field.onChange(onSelected(task.id))}
+                  checked={field.value.includes(task._id)}
+                  onChange={() => field.onChange(onSelected(task._id))}
                 />
               ))}
             </>
@@ -71,18 +71,18 @@ function TaskItem({ task, checked, onChange }) {
 
   const handleMarkComplete = () => {
     handleCloseMenu();
-    console.log('MARK COMPLETE', task.id);
+    console.log('MARK COMPLETE', task._id);
   };
 
 
   const handleEdit = () => {
     handleCloseMenu();
-    console.log('EDIT', task.id);
+    console.log('EDIT', task._id);
   };
 
   const handleDelete = () => {
     handleCloseMenu();
-    console.log('DELETE', task.id);
+    console.log('DELETE', task._id);
   };
 
   return (
@@ -99,7 +99,7 @@ function TaskItem({ task, checked, onChange }) {
     >
       <FormControlLabel
         control={<Checkbox checked={checked} onChange={onChange} />}
-        label={task.label}
+        label={task.name}
         sx={{ flexGrow: 1, m: 0 }}
       />
 

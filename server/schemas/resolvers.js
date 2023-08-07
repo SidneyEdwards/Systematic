@@ -10,7 +10,28 @@ const resolvers = {
       if (!context.user) {
         throw new AuthenticationError('Not logged in');
       }
-      return await User.findById(context.user._id)
+      const data = await User.findById(context.user._id).populate([
+        {
+          path: 'days',
+          populate: {
+            path: 'mood'
+          }
+        },
+        {
+          path: 'dailyHabits',
+          populate: {
+            path: 'daysOfWeek'
+          }
+        },
+        {
+          path: 'friends'
+        },
+        {
+          path: 'currentMood'
+        }
+      ])
+
+      return data;
     },
     currentMood: async (parent, args, context) => {
       return await Mood.findById(args);
@@ -77,6 +98,33 @@ const resolvers = {
     addDailyHabit: async (parent, argObj) => {
       try {
         return await DailyHabit.create(argObj);
+      } catch (err) {
+        console.log(err);
+        throw new UserInputError('Incomplete Fields')
+      }
+    },
+    addManyDailyHabits: async (parent, { namesArr }, context) => {
+      if(!context.user) throw new AuthenticationError('Incorrect credentials');
+
+      try {
+
+        const moddedNamesArr = namesArr.map((name) => ({ name }));
+
+        const allHabitsData = await DailyHabit.insertMany(moddedNamesArr);
+
+        const habitIds = allHabitsData.map(({ _id }) => _id);
+
+        const userData = await User.findOneAndUpdate(
+          {
+          _id: context.user._id,
+          },
+          {
+            $push: { dailyHabits: { $each: habitIds }}
+          }
+        );
+
+        return allHabitsData;
+
       } catch (err) {
         console.log(err);
         throw new UserInputError('Incomplete Fields')
