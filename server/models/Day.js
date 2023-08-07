@@ -12,6 +12,14 @@ function dow(d) {
   }
 }
 
+async function getQuote() {
+  const response = await fetch('https://zenquotes.io/api/today');
+  const json = await response.json();
+  const qtext = JSON.stringify(json[0].q + " - " + json[0].a);
+  console.log(qtext);
+  return qtext;
+}
+
 const daySchema = new Schema(
   {
     user: {
@@ -38,6 +46,10 @@ const daySchema = new Schema(
       type: String,
       required: true,
       default: (new Date().getMonth() + 1).toString() + '/' + new Date().getDate().toString()  + '/' + (new Date().getYear() + 1900).toString(),
+    },
+    quote: {
+      type: String,
+      default: getQuote(),
     },
     didIDoThat: [{
       habit: {
