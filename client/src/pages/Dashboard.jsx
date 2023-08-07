@@ -24,6 +24,7 @@ export default function Dashboard() {
   // console.log(data);
   
   const dailyHabits = data?.me.dailyHabits || [];
+  const qtext = data?.me.days[data?.me.days.length].quote || [];
 
 
   return (
@@ -71,7 +72,8 @@ export default function Dashboard() {
             href='/Affirmations'
             variant='contained'
             style={{ marginRight: 250, marginTop: 0}} 
-        > Affirmations Blog
+            value={'Affirmations Blog ' + qtext}
+        >
         </Button>
     </ThemeProvider>
       <Typography variant='h5' style={{ color: colors.white }}>
