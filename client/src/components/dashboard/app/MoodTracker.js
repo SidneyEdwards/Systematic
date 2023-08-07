@@ -3,8 +3,6 @@ import ReactApexChart from "react-apexcharts";
 import { Card, CardHeader, Box } from '@mui/material';
 
 
-
-
 var options = {
   chart: {
     height: 350,
@@ -53,7 +51,7 @@ var options = {
     enabled: false
   },
   title: {
-    text: "Daily Mood Tracker"
+    text: "Weekly Mood Tracker"
 
   }
 };
@@ -62,37 +60,13 @@ var series = [
   {
     name: "Mood",
     data: formatData([
-      0,
-      0,
-      1,
-      2,
       5,
-      6,
-      8,
-      9,
-      11,
-      13,
       15,
-      16,
-      17,
-      20,
-      21,
-      23,
-      25,
-      26,
-      34,
-      35,
-      38,
-      43,
+      30,
+      50,
       45,
-      47,
-      49,
-      50,
-      50,
-      50,
-      38,
-      39,
-      50
+      26,
+      8
 
     ])
   },
@@ -102,37 +76,14 @@ var series = [
 function formatData(data) {
   let newData = [];
   let categories = [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30",
-    "31"
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+
   ];
 
   for (var i = 0; i < categories.length; i++) {
@@ -145,7 +96,7 @@ function formatData(data) {
   return newData;
 }
 
-export default function HabitTracker() {
+export default function MoodTracker() {
   return (
     <Card>
     <CardHeader/>

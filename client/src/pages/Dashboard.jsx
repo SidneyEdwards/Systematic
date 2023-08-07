@@ -47,9 +47,9 @@ export default function Dashboard() {
 
     <Grid>
       <Typography variant='h5' style={{ color: colors.white }}>
-      </Typography>
-      <Typography variant='h5' style={{ color: colors.white }}>
-      </Typography>
+        </Typography>
+          <Typography variant='h5' style={{ color: colors.white }}>
+        </Typography>
       <ThemeProvider theme={button}> 
       <Button
           href='/ManageHabits'
@@ -58,58 +58,56 @@ export default function Dashboard() {
       > Manage Habits
       </Button>
       </ThemeProvider>
+        <Typography variant='h5' style={{ color: colors.white }}>
+          <>...</>
+        </Typography>
       <Typography variant='h5' style={{ color: colors.white }}>
-      <>...</>
-      </Typography>
-
+        </Typography>
       <Typography variant='h5' style={{ color: colors.white }}>
-      </Typography>
-
-      <Typography variant='h5' style={{ color: colors.white }}>
-      </Typography>
-      <ThemeProvider theme={button}> 
+        </Typography>
+      
+    <ThemeProvider theme={button}> 
         <Button
             href='/Affirmations'
             variant='contained'
             style={{ marginRight: 250, marginTop: 0}} 
         > Affirmations Blog
         </Button>
-      </ThemeProvider>
+    </ThemeProvider>
       <Typography variant='h5' style={{ color: colors.white }}>
-      <>...</>
+        <>...</>
       </Typography>
 
-
         <Grid item xs={12} md={6} lg={8}>
-          <BigPictureTasks
+  <BigPictureTasks
               title="Big Picture Tasks"
               list={dailyHabits}
           />
-        </Grid>
+      </Grid>
       <></>
-      <Typography variant='h5' style={{ color: colors.white }}>
-        <>...</>
-      </Typography>
+        <Typography variant='h5' style={{ color: colors.white }}>
+          <>...</>
+          </Typography>
         <Grid item xs={12} md={6} lg={8}>
-      <HabitTracker
+  <HabitTracker
       title="HabitsInMotion" />
         </Grid>
-        <></>
-      <Typography variant='h5' style={{ color: colors.white }}>
-        <>...</>
-      </Typography>
+          <></>
+            <Typography variant='h5' style={{ color: colors.white }}>
+                <>...</>
+            </Typography>
 
       <Grid item xs={12} md={6} lg={8}>
-      <MoodTracker
-      title="HabitsInMotion" />
-        </Grid>
+  <MoodTracker
+      title="MoodTracker" />
+      </Grid>
 
-    </Grid>
+        </Grid>
           <Typography variant="h4" sx={{ mb: 5 }}>
           <></>
           </Typography>
-          <Grid>
-              <HabitsInMotion
+      <Grid>
+  <HabitsInMotion
                 title="HabitsInMotion"
                 subheader="Habits Completed (+43%) than last year"
                 chartLabels={[
@@ -136,8 +134,8 @@ export default function Dashboard() {
             <Typography variant="h4" sx={{ mb: 5 }}>
           <></>
           </Typography>
-            <Grid item xs={12} md={6} lg={4}>
-              <WhereIsYourTimeSpent
+        <Grid item xs={12} md={6} lg={4}>
+  <WhereIsYourTimeSpent
                 title="Where is My Energy Spent"
                 chartData={[
                   { label: 'Call Mom', value: 4344 },
@@ -152,7 +150,7 @@ export default function Dashboard() {
                   theme.palette.secondary.light,
                 ]}
               />
-            </Grid>
+      </Grid>
 
     </Container>
     </Box>
