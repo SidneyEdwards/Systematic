@@ -30,6 +30,7 @@ const typeDefs = gql`
     dayOfWeek: String
     mood: Mood!
     user: User
+    quote: String
   }
 
   type DayOfWeek {
