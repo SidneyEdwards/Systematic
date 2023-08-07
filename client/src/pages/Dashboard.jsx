@@ -73,7 +73,6 @@ export default function Dashboard() {
             href='/Affirmations'
             variant='contained'
             style={{ marginRight: 250, marginTop: 0}}
-            value={qtext}
         > Affirmations Blog
         </Button>
     </ThemeProvider>
@@ -83,7 +82,7 @@ export default function Dashboard() {
 
         <Grid item xs={12} md={6} lg={8}>
   <BigPictureTasks
-              title={qtext}
+              title="Big Picture Tasks"
               list={dailyHabits}
           />
       </Grid>
