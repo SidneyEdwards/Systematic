@@ -24,6 +24,7 @@ query Query {
         numericV
         stringV
       }
+      quote
     }
     dailyHabits {
       _id
