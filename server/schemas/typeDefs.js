@@ -50,6 +50,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    quote: String
     currentMood(_id: ID): Mood
     users: [User]
     moods: [Mood]

@@ -3,6 +3,14 @@ const { signToken } = require('../utils/auth');
 const { AuthenticationError, UserInputError } = require('apollo-server-express');
 const { dateScalar } = require('./scalar');
 
+async function getQuote() {
+  const response = await fetch('https://zenquotes.io/api/today');
+  const json = await response.json();
+  const qtext = JSON.stringify(json[0].q + " - " + json[0].a);
+  console.log(qtext);
+  return qtext;
+}
+
 const resolvers = {
   Date: dateScalar,
   Query: {
@@ -32,6 +40,9 @@ const resolvers = {
       ])
 
       return data;
+    },
+    quote: async (parent, args, context) => {
+      return await getQuote();
     },
     currentMood: async (parent, args, context) => {
       return await Mood.findById(args);

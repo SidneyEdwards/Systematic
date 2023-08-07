@@ -12,6 +12,7 @@ import {
   HabitsInMotion,
 } from '../components/dashboard/app';
 import { QUERY_ME } from '../graphql/queries';
+import { QUERY_QUOTE } from '../graphql/queries';
 import { useQuery } from '@apollo/client'
 
 // ----------------------------------------------------------------------
@@ -20,11 +21,12 @@ export default function Dashboard() {
   const theme = useTheme();
 
   const { data, loading, error } = useQuery(QUERY_ME);
-
-  // console.log(data);
+  const { data1, loading1, error1 } = useQuery(QUERY_QUOTE);
   
   const dailyHabits = data?.me.dailyHabits || [];
+  const qtext = data1 || "";
 
+  console.log(qtext.toString());
 
   return (
     <Page title={'Dashboard'} class-name='Dashboard' isProtected={false} pageStyles={{
@@ -70,7 +72,8 @@ export default function Dashboard() {
         <Button
             href='/Affirmations'
             variant='contained'
-            style={{ marginRight: 250, marginTop: 0}} 
+            style={{ marginRight: 250, marginTop: 0}}
+            value={qtext}
         > Affirmations Blog
         </Button>
     </ThemeProvider>
@@ -80,7 +83,7 @@ export default function Dashboard() {
 
         <Grid item xs={12} md={6} lg={8}>
   <BigPictureTasks
-              title="Big Picture Tasks"
+              title={qtext}
               list={dailyHabits}
           />
       </Grid>
