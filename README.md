@@ -13,12 +13,12 @@ Affirmations is a fully MERN stacked application that allows the user to track d
 
 ## Installation and Useage
 
-- TO use the deployed link: Visit the Deployed link, below and sign up!
+- To use the deployed link: Visit the Deployed link below, and sign up!
 - To create your own habit tracker:
-  -Fork the code
-  -install node.js, react router DOM, express.js, mongodb, apexCharts, and material UI.
-  -npi i, npm start on the client side
-  -npm i, npm run seed, npm start on the server side
+    1. Fork the code
+    2. install node.js, react router DOM, express.js, mongodb, apexCharts, and material UI.
+    3. npi i, npm start on the client side
+    4. npm i, npm run seed, npm start on the server side
 
 ## Deployed Link
 
@@ -26,6 +26,6 @@ https://git.heroku.com/infinite-atoll-17864.git
 
 
 ## Technologies Used
-REact, GraphQL, Node.js, Express. js, MongoDB, Heroku, ApexCharts, Material UI
+React, GraphQL, Node.js, Express. js, MongoDB, Heroku, ApexCharts, Material UI
 
 
