@@ -3,23 +3,23 @@ const { DailyHabit, Day, Mood, User } = require('../models');
 
 const moodsArr = [
   {
-    numericV: 0,
+    numericV: 10,
     stringV: 'Awful'
   },
   {
-    numericV: 1,
+    numericV: 20,
     stringV: 'Bad'
   },
   {
-    numericV: 2,
+    numericV: 30,
     stringV: 'Meh'
   },
   {
-    numericV: 3,
+    numericV: 40,
     stringV: 'Good'
   },
   {
-    numericV: 4,
+    numericV: 50,
     stringV: 'Fantastic!'
   },
 ];

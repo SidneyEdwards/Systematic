@@ -39,7 +39,7 @@ title: {
 
 var series = [
 {
-    name: "Habit1",
+    name: "Call Mom",
     data: formatData([
       0,
       40,
@@ -52,7 +52,7 @@ var series = [
     ])
 },
 {
-    name: "Habit2",
+    name: "4 Hours of Coding",
     data: formatData([
     0,
     37,
@@ -66,7 +66,7 @@ var series = [
     ])
 },
 {
-    name: "Habit3",
+    name: "Run 3 Miles",
     data: formatData([
     40,
     40,
@@ -79,7 +79,7 @@ var series = [
     ])
 },
 {
-    name: "Habit4",
+    name: "20 Minutes of Meditation",
     data: formatData([
     0,
     0,
@@ -92,7 +92,7 @@ var series = [
     ])
 },
 {
-    name: "Habit5",
+    name: "Learn to Polka",
     data: formatData([
     0,
     4,

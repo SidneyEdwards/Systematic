@@ -6,7 +6,7 @@ const moodSchema = new Schema(
       type: Number,
       required: true,
       min: 0,
-      max: 4,
+      max: 40,
       unique: true,
     },
 
@@ -24,19 +24,19 @@ const moodSchema = new Schema(
 
 moodSchema.pre('save', async function (next) {
   switch(this.numericV) {
-    case 0:
+    case 10:
       this.stringV = "Awful";
       break;
-    case 1:
+    case 20:
       this.stringV = "Bad";
       break;
-    case 2:
+    case 30:
       this.stringV = "Meh";
       break;
-    case 3:
+    case 40:
       this.stringV = "Good";
       break;
-    case 4:
+    case 50:
       this.stringV = "Fantastic!";
       break;
   }
