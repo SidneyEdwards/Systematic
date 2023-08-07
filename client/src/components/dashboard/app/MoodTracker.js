@@ -8,6 +8,11 @@ var options = {
     height: 350,
     type: "heatmap"
   },
+  legend:{
+  show: true,
+  position:"top",
+  showForSingleSeries: true
+  },
   plotOptions: {
     heatmap: {
       colorScale: {
